@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getTeam, getTeamMatches } from "../api/football";
 
 export default function Team() {
-  const { teamId } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [team, setTeam] = useState(null);
@@ -13,13 +13,13 @@ export default function Team() {
   const [matchFilter, setMatchFilter] = useState("ALL");
 
   useEffect(() => {
-    console.log("Cargando datos para el equipo ID:", teamId);
+    console.log("Cargando datos para el equipo ID:", id);
     const fetchTeamData = async () => {
       setLoading(true);
       try {
         const [teamData, matchesData] = await Promise.all([
-          getTeam(teamId),
-          getTeamMatches(teamId),
+          getTeam(id),
+          getTeamMatches(id),
         ]);
 
         setTeam(teamData);
@@ -31,10 +31,10 @@ export default function Team() {
       }
     };
 
-    if (teamId) {
+    if (id) {
       fetchTeamData();
     }
-  }, [teamId]);
+  }, [id]);
 
   if (loading) {
     return <div className="team-loading">Cargando detalles del equipo...</div>;
@@ -202,7 +202,7 @@ export default function Team() {
             <div className="matches-timeline">
               {filteredMatches.length > 0 ? (
                 filteredMatches.map((match) => {
-                  const isHome = match.homeTeam.id === Number(teamId);
+                  const isHome = match.homeTeam.id === Number(id);
                   return (
                     <div className="match-card-row" key={match.id}>
                       <div className="match-time-meta">
