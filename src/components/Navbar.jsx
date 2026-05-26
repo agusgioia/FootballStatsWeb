@@ -8,7 +8,7 @@ export default function Navbar() {
     { to: "/matches", label: "Partidos" },
     { to: "/standings", label: "Posiciones" },
     { to: "/scorers", label: "Goleadores" },
-    { to: "/live", label: "En Vivo" },
+    { to: "/live", label: "En Vivo", hasBadge: true },
   ];
 
   return (
@@ -35,13 +35,11 @@ export default function Navbar() {
             }`}
           >
             {link.label}
+            {link.hasBadge && (
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            )}
           </Link>
         ))}
-
-        <div className="flex items-center gap-1.5 text-xs text-green-400 bg-green-400/10 border border-green-400/25 px-2.5 py-1 rounded-full ml-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          En vivo
-        </div>
       </div>
     </nav>
   );
