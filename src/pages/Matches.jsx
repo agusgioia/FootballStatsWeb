@@ -86,7 +86,7 @@ const Matches = () => {
                     <img
                       src={match.awayTeam.crest}
                       alt={match.awayTeam.name}
-                      className="w-8 h-8 ml-100"
+                      className="w-8 h-8 ml-70"
                     />
                   )}
                 </Link>
