@@ -5,6 +5,7 @@ import Scorers from "./pages/Scorers";
 import Standings from "./pages/Standings";
 import Navbar from "./components/Navbar";
 import Team from "./pages/Team";
+import LiveMatches from "./pages/LiveMatches";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/standings" element={<Standings />} />
         <Route path="/scorers" element={<Scorers />} />
         <Route path="/teams/:id" element={<Team />} />
+        <Route path="/live" element={<LiveMatches />} />
         <Route path="/competitions/:code/matches" element={<Matches />} />
         <Route path="/competitions/:code/standings" element={<Standings />} />
         <Route path="/competitions/:code/scorers" element={<Scorers />} />
