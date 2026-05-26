@@ -13,6 +13,7 @@ export default function Team() {
   const [matchFilter, setMatchFilter] = useState("ALL");
 
   useEffect(() => {
+    console.log("Cargando datos para el equipo ID:", teamId);
     const fetchTeamData = async () => {
       setLoading(true);
       try {
