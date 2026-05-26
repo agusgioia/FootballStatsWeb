@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getLiveMatches } from "../api/football";
+import { Link } from "react-router-dom";
 
 export default function LiveMatches() {
   const [matches, setMatches] = useState([]);
@@ -9,6 +10,7 @@ export default function LiveMatches() {
     const fetchLiveMatches = async () => {
       setLoading(true);
       const liveMatches = await getLiveMatches();
+      console.log("Partidos en vivo:", liveMatches);
       setMatches(liveMatches);
       setLoading(false);
     };
@@ -45,9 +47,41 @@ export default function LiveMatches() {
             </span>
             <div className="flex items-center justify-between gap-4">
               <p className="text-white text-sm flex-1">
-                {match.homeTeam.name} vs {match.awayTeam.name}
+                {match.homeTeam.shortName}
+                <Link
+                  to={`/teams/${match.homeTeam.id}`}
+                  className="ml-2 text-blue-400 hover:underline"
+                >
+                  {match.homeTeam.crest && (
+                    <img
+                      src={match.homeTeam.crest}
+                      alt={match.homeTeam.name}
+                      className="w-8 h-8 ml-2"
+                    />
+                  )}
+                </Link>
+              </p>
+              <div className="text-white font-medium text-lg tabular-nums">
+                {match.score.fullTime.home ?? "-"} —{" "}
+                {match.score.fullTime.away ?? "-"}
+              </div>
+              <p className="text-white text-sm flex-1 text-right">
+                {match.awayTeam.shortName}
+                <Link
+                  to={`/teams/${match.awayTeam.id}`}
+                  className="ml-2 text-blue-400 hover:underline"
+                >
+                  {match.awayTeam.crest && (
+                    <img
+                      src={match.awayTeam.crest}
+                      alt={match.awayTeam.name}
+                      className="w-8 h-8 ml-60"
+                    />
+                  )}
+                </Link>
               </p>
             </div>
+            <p className="text-white/30 text-xs">Jornada {match.matchday}</p>
           </div>
         ))}
       </div>
