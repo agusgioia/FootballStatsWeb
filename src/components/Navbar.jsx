@@ -8,6 +8,7 @@ export default function Navbar() {
     { to: "/matches", label: "Partidos" },
     { to: "/standings", label: "Posiciones" },
     { to: "/scorers", label: "Goleadores" },
+    { to: "/live", label: "En Vivo" },
   ];
 
   return (
