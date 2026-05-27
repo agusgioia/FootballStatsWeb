@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getMatch } from "../api/football";
 import {
   getStatusBadgeClass,
@@ -47,13 +47,11 @@ const MatchCard = () => {
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 flex-1">
             {match.homeTeam.crest && (
-              <Link to={`/teams/${match.homeTeam.id}`}>
-                <img
-                  src={match.homeTeam.crest}
-                  alt={match.homeTeam.name}
-                  className="w-6 h-6 object-contain"
-                />
-              </Link>
+              <img
+                src={match.homeTeam.crest}
+                alt={match.homeTeam.name}
+                className="w-6 h-6 object-contain"
+              />
             )}
             <p className="text-white text-sm">{match.homeTeam.shortName}</p>
           </div>
@@ -65,13 +63,11 @@ const MatchCard = () => {
           <div className="flex items-center gap-2 flex-1 justify-end">
             <p className="text-white text-sm">{match.awayTeam.shortName}</p>
             {match.awayTeam.crest && (
-              <Link to={`/teams/${match.awayTeam.id}`}>
-                <img
-                  src={match.awayTeam.crest}
-                  alt={match.awayTeam.name}
-                  className="w-6 h-6 object-contain"
-                />
-              </Link>
+              <img
+                src={match.awayTeam.crest}
+                alt={match.awayTeam.name}
+                className="w-6 h-6 object-contain"
+              />
             )}
           </div>
         </div>
