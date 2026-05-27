@@ -36,7 +36,7 @@ export default function Navbar() {
           >
             {link.label}
             {link.hasBadge && (
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse ml-1.5"></span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
             )}
           </Link>
         ))}
