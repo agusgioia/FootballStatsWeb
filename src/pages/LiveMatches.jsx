@@ -74,7 +74,7 @@ export default function LiveMatches() {
               </div>
 
               <div className="text-white font-medium text-lg tabular-nums">
-                {getScore(match)}
+                <Link to={`/matches/${match.id}`}>{getScore(match)}</Link>
               </div>
 
               <div className="flex items-center gap-2 flex-1 justify-end">
