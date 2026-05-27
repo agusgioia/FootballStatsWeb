@@ -39,21 +39,21 @@ const MatchCard = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
       <div className="bg-[#0f1117] border border-white/8 rounded-xl p-4 flex flex-col gap-3">
         <span
-          className={`text-xs px-2 py-0.5 rounded-full w-fit ${getStatusBadgeClass(match.status)}`}
+          className={`text-xs px-2 py-0.5 rounded-full w-fit ${getStatusBadgeClass(match?.status)}`}
         >
-          {getStatusLabel(match.status, match.utcDate)}
+          {getStatusLabel(match?.status, match?.utcDate)}
         </span>
-        <p className="text-white/30 text-xs">Jornada {match.matchday}</p>
+        <p className="text-white/30 text-xs">Jornada {match?.matchday}</p>
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 flex-1">
-            {match.homeTeam.crest && (
+            {match?.homeTeam.crest && (
               <img
                 src={match.homeTeam.crest}
                 alt={match.homeTeam.name}
                 className="w-6 h-6 object-contain"
               />
             )}
-            <p className="text-white text-sm">{match.homeTeam.shortName}</p>
+            <p className="text-white text-sm">{match?.homeTeam?.shortName}</p>
           </div>
 
           <div className="text-white font-medium text-lg tabular-nums">
@@ -61,8 +61,8 @@ const MatchCard = () => {
           </div>
 
           <div className="flex items-center gap-2 flex-1 justify-end">
-            <p className="text-white text-sm">{match.awayTeam.shortName}</p>
-            {match.awayTeam.crest && (
+            <p className="text-white text-sm">{match?.awayTeam?.shortName}</p>
+            {match?.awayTeam.crest && (
               <img
                 src={match.awayTeam.crest}
                 alt={match.awayTeam.name}
