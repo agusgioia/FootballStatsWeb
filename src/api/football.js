@@ -14,6 +14,11 @@ export const getMatches = async (code) => {
   return response.data;
 };
 
+export const getMatch = async (matchId) => {
+  const response = await api.get(`/matches/${matchId}`);
+  return response.data;
+};
+
 export const getLiveMatches = async () => {
   const response = await api.get("/matches/live");
   return response.data;
