@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="w-7 h-7 bg-blue-600 rounded-md flex items-center justify-center text-sm">
           ⚽
         </div>
-        Arg<span className="text-blue-500">Stats</span>
+        Football <span className="text-blue-500">Stats</span>
       </Link>
 
       <div className="flex items-center gap-1">
