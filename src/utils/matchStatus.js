@@ -23,11 +23,11 @@ export const getScore = (match) => {
   if (!match) return "- — -";
   const { status, score } = match;
   if (status === "IN_PLAY" || status === "PAUSED") {
-    const home = score.fullTime?.home ?? "-";
-    const away = score.fullTime?.away ?? "-";
+    const home = score?.fullTime?.home ?? "-";
+    const away = score?.fullTime?.away ?? "-";
     return `${home} — ${away}`;
   }
-  const home = score.fullTime?.home ?? "-";
-  const away = score.fullTime?.away ?? "-";
+  const home = score?.fullTime?.home ?? "-";
+  const away = score?.fullTime?.away ?? "-";
   return `${home} — ${away}`;
 };
