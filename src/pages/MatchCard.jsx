@@ -46,7 +46,7 @@ const MatchCard = () => {
         <p className="text-white/30 text-xs">Jornada {match?.matchday}</p>
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 flex-1">
-            {match?.homeTeam.crest && (
+            {match?.homeTeam?.crest && (
               <img
                 src={match.homeTeam.crest}
                 alt={match.homeTeam.name}
@@ -62,7 +62,7 @@ const MatchCard = () => {
 
           <div className="flex items-center gap-2 flex-1 justify-end">
             <p className="text-white text-sm">{match?.awayTeam?.shortName}</p>
-            {match?.awayTeam.crest && (
+            {match?.awayTeam?.crest && (
               <img
                 src={match.awayTeam.crest}
                 alt={match.awayTeam.name}
