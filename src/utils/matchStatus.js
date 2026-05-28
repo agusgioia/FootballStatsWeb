@@ -20,6 +20,7 @@ export const getStatusLabel = (status, utcDate) => {
 };
 
 export const getScore = (match) => {
+  if (!match) return "- — -";
   const { status, score } = match;
   if (status === "IN_PLAY" || status === "PAUSED") {
     const home = score.fullTime?.home ?? "-";
